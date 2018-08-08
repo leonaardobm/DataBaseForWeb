@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS exercise</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		function mudaAlerta(){
+			document.getElementById("change").innerHTML = "Hello World!"
+			document.getElementById("change").style.fontSize = "30px"
+			alert("Congratulations, you made it!")
+		}
+		</script>
+
+		<center>
+		<p id = "change">Click here to change the content of this page.</p>
+
+		<button type= "button" onclick= "mudaAlerta()">Click me, pls!</button>
+
+		</center>
+	</body>
+</html>
