@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CALCULADORA</title>
+<script>
+var  op1, op2, op;
+var estado = 0, result;
+
+function clicarNumero(numero){
+	switch(estado){
+	case 0: 
+		document.getElementById('demo').innerHTML += numero;
+		break;
+	case 1:
+		document.getElementById('demo').innerHTML = numero;
+		estado = 0;
+		break;
+	}
+}
+
+function operador(operador){
+	estado = 1;
+	op = operador;
+	op1 = document.getElementById('demo').innerHTML;
+	//alert(op1);
+
+}
+
+function apagar(){
+	document.getElementById('demo').innerHTML = '';
+}
+
+function calcula (){
+	op2 = document.getElementById('demo').innerHTML;
+	switch(op){
+		case '+':
+			document.getElementById('demo').innerHTML = parseFloat(op1) + parseFloat(op2);
+			break;
+
+		case '-':
+			document.getElementById('demo').innerHTML = parseFloat(op1) - parseFloat(op2);
+			break;
+
+		case 'X':
+			document.getElementById('demo').innerHTML = parseFloat(op1) * parseFloat(op2);
+			break;
+
+		case '/':
+			document.getElementById('demo').innerHTML = parseFloat(op1) / parseFloat(op2);
+			break;
+	}
+}
+
+</script>
+ </head>
+ <center>
+<body>
+<h2>Calculadora</h2>
+
+<p id="demo"></p>
+<button type="button" onclick="clicarNumero(9)">9</button>
+<button type="button" onclick="clicarNumero(8)">8</button>
+<button type="button" onclick="clicarNumero(7)">7</button>
+<button type="button" onclick="operador('/')">/</button>
+<br>
+<button type="button" onclick="clicarNumero(6)">6</button>
+<button type="button" onclick="clicarNumero(5)">5</button>
+<button type="button" onclick="clicarNumero(4)">4</button>
+<button type="button" onclick="operador('X')">X</button>
+<br>
+<button type="button" onclick="clicarNumero(3)">3</button>
+<button type="button" onclick="clicarNumero(2)">2</button>
+<button type="button" onclick="clicarNumero(1)">1</button>
+<button type="button" onclick="operador('-')">-</button>
+<br>
+<button type="button" onclick="clicarNumero(0)">0</button>
+<button type="button" onclick="clicarNumero('.')">.</button>
+<button type="button" onclick="calcula()">=</button>
+<button type="button" onclick="operador('+')">+</button>
+<br>
+<button type="button" onclick="apagar()">C</button>
+
+</body>
+</center>
+</html>
